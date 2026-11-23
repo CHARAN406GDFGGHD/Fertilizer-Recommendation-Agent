@@ -1,5 +1,7 @@
 # Intelligent Fertilizer Recommendation Agent Using Machine Learning
 
+**Live Demo:** https://charan406gdfgghd-fertilizer-recommendation-agent-app-asfgmr.streamlit.app/
+
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Framework-Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![ML-Scikit--Learn_XGBoost](https://img.shields.io/badge/ML-Scikit--Learn%20%7C%20XGBoost-orange.svg)](https://scikit-learn.org/)
