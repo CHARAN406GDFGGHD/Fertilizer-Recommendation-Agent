@@ -31,14 +31,37 @@ class FertilizerPredictor:
         best_model_path = os.path.join(MODELS_DIR, "best_model.joblib")
         all_models_path = os.path.join(MODELS_DIR, "all_models.joblib")
 
-        if os.path.exists(preprocessor_path):
-            self.preprocessor = joblib.load(preprocessor_path)
-        if os.path.exists(label_encoder_path):
-            self.label_encoder = joblib.load(label_encoder_path)
-        if os.path.exists(best_model_path):
-            self.best_model = joblib.load(best_model_path)
-        if os.path.exists(all_models_path):
-            self.all_models = joblib.load(all_models_path)
+        try:
+            if os.path.exists(preprocessor_path):
+                self.preprocessor = joblib.load(preprocessor_path)
+            if os.path.exists(label_encoder_path):
+                self.label_encoder = joblib.load(label_encoder_path)
+            if os.path.exists(best_model_path):
+                self.best_model = joblib.load(best_model_path)
+            if os.path.exists(all_models_path):
+                self.all_models = joblib.load(all_models_path)
+        except Exception as e:
+            print(f"Artifact loading exception: {e}. Retraining models on the fly...")
+            self.preprocessor = None
+            self.label_encoder = None
+            self.best_model = None
+            self.all_models = None
+
+        # Self-healing fallback: If artifacts are missing or corrupted, retrain immediately from dataset
+        if not self.is_ready():
+            try:
+                from src.train_models import train_and_evaluate_pipeline
+                train_and_evaluate_pipeline()
+                if os.path.exists(preprocessor_path):
+                    self.preprocessor = joblib.load(preprocessor_path)
+                if os.path.exists(label_encoder_path):
+                    self.label_encoder = joblib.load(label_encoder_path)
+                if os.path.exists(best_model_path):
+                    self.best_model = joblib.load(best_model_path)
+                if os.path.exists(all_models_path):
+                    self.all_models = joblib.load(all_models_path)
+            except Exception as train_err:
+                print(f"Fallback training error: {train_err}")
 
     def is_ready(self):
         return (
