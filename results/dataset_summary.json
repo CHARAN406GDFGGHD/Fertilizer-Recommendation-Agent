@@ -1,0 +1,133 @@
+{
+    "shape": [
+        99,
+        9
+    ],
+    "rows": 99,
+    "columns": 9,
+    "column_names": [
+        "Temparature",
+        "Humidity",
+        "Moisture",
+        "Soil Type",
+        "Crop Type",
+        "Nitrogen",
+        "Potassium",
+        "Phosphorous",
+        "Fertilizer Name"
+    ],
+    "data_types": {
+        "Temparature": "int64",
+        "Humidity": "int64",
+        "Moisture": "int64",
+        "Soil Type": "str",
+        "Crop Type": "str",
+        "Nitrogen": "int64",
+        "Potassium": "int64",
+        "Phosphorous": "int64",
+        "Fertilizer Name": "str"
+    },
+    "missing_values": {
+        "Temparature": 0,
+        "Humidity": 0,
+        "Moisture": 0,
+        "Soil Type": 0,
+        "Crop Type": 0,
+        "Nitrogen": 0,
+        "Potassium": 0,
+        "Phosphorous": 0,
+        "Fertilizer Name": 0
+    },
+    "duplicates": 0,
+    "target_distribution": {
+        "Urea": 22,
+        "DAP": 18,
+        "28-28": 17,
+        "14-35-14": 14,
+        "20-20": 14,
+        "17-17-17": 7,
+        "10-26-26": 7
+    },
+    "unique_soil_types": [
+        "Black",
+        "Clayey",
+        "Loamy",
+        "Red",
+        "Sandy"
+    ],
+    "unique_crop_types": [
+        "Barley",
+        "Cotton",
+        "Ground Nuts",
+        "Maize",
+        "Millets",
+        "Oil seeds",
+        "Paddy",
+        "Pulses",
+        "Sugarcane",
+        "Tobacco",
+        "Wheat"
+    ],
+    "numerical_stats": {
+        "Temparature": {
+            "count": 99.0,
+            "mean": 30.28,
+            "std": 3.5,
+            "min": 25.0,
+            "25%": 28.0,
+            "50%": 30.0,
+            "75%": 33.0,
+            "max": 38.0
+        },
+        "Humidity": {
+            "count": 99.0,
+            "mean": 59.15,
+            "std": 5.84,
+            "min": 50.0,
+            "25%": 54.0,
+            "50%": 60.0,
+            "75%": 64.0,
+            "max": 72.0
+        },
+        "Moisture": {
+            "count": 99.0,
+            "mean": 43.18,
+            "std": 11.27,
+            "min": 25.0,
+            "25%": 34.0,
+            "50%": 41.0,
+            "75%": 50.5,
+            "max": 65.0
+        },
+        "Nitrogen": {
+            "count": 99.0,
+            "mean": 18.91,
+            "std": 11.6,
+            "min": 4.0,
+            "25%": 10.0,
+            "50%": 13.0,
+            "75%": 24.0,
+            "max": 42.0
+        },
+        "Potassium": {
+            "count": 99.0,
+            "mean": 3.38,
+            "std": 5.81,
+            "min": 0.0,
+            "25%": 0.0,
+            "50%": 0.0,
+            "75%": 7.5,
+            "max": 19.0
+        },
+        "Phosphorous": {
+            "count": 99.0,
+            "mean": 18.61,
+            "std": 13.48,
+            "min": 0.0,
+            "25%": 9.0,
+            "50%": 19.0,
+            "75%": 30.0,
+            "max": 42.0
+        }
+    }
+}

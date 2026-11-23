@@ -1,0 +1,27 @@
+# Python byte-code
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# SQLite databases (optional local user data, keep schema reproducible)
+*.db-journal
+
+# Streamlit local state
+.streamlit/secrets.toml
